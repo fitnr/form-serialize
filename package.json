@@ -2,15 +2,18 @@
   "name": "form-serialize",
   "version": "0.7.1",
   "description": "serialize html forms",
+  "jsnext:main": "index.jsnext.js",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "devDependencies": {
     "domify": "~1.4.0",
+    "rollup": "^0.26.0",
     "zuul": "~3.10.1"
   },
   "scripts": {
+    "prepublish": "rollup -f cjs -i index.jsnext.js -o index.js",
     "test": "zuul -- test/index.js",
     "test-local": "zuul --local -- test/index.js"
   },
